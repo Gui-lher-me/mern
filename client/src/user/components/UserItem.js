@@ -27,4 +27,3 @@ export const UserItem = ({ user }) => {
         </li>
     );
 };
-// git remote add origin https://github.com/Gui-lher-me/mern.git
