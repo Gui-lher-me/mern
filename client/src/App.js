@@ -1,3 +1,14 @@
-import { createRoutes } from './routes';
+import { routeComponents } from './routeComponents';
 
-export const App = () => createRoutes;
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import { MainNavigation } from './shared/Navigation/MainNavigation';
+
+export const App = () => {
+    return (
+        <Router>
+            <MainNavigation />
+            <main>{routeComponents}</main>
+        </Router>
+    );
+};
