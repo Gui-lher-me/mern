@@ -1,18 +1,19 @@
 import React from 'react';
 
-import { UsersList } from '../components/UsersList';
+import UsersList from '../components/UsersList';
 
-export const Users = () => {
-    return (
-        <UsersList
-            users={[
-                {
-                    placeCount: 3,
-                    image: 'https://www.pixel4k.com/wp-content/uploads/2018/09/london-lights-4k_1538069230.jpg',
-                    id: 'u1',
-                    name: 'Guilherme',
-                },
-            ]}
-        />
-    );
+const Users = () => {
+  const USERS = [
+    {
+      id: 'u1',
+      name: 'Max Schwarz',
+      image:
+        'https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+      places: 3
+    }
+  ];
+
+  return <UsersList items={USERS} />;
 };
+
+export default Users;
