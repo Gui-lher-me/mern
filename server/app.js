@@ -1,6 +1,7 @@
 // imports
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const placesRoutes = require('./routes/places-routes');
 const usersRoutes = require('./routes/users-routes');
@@ -37,6 +38,12 @@ app.use((error, req, res, next) => {
 });
 // **************************************************
 
-// port
+// connecting to the db
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, console.log(`Server running on port ${PORT}`));
+mongoose
+    .connect(process.env.MONGODB_ATLAS_CONNECTION_STRING)
+    .then((info) => {
+        app.listen(PORT, console.log(`Server running on port ${PORT}`));
+    })
+    .catch((error) => console.log(error));
+// **************************************************
