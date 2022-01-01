@@ -1,6 +1,6 @@
 // imports
 const express = require('express');
-const bodyParser = require('body-parser');
+const { json } = require('body-parser');
 const mongoose = require('mongoose');
 
 const placesRoutes = require('./routes/places-routes');
@@ -18,7 +18,7 @@ const app = express();
 // **************************************************
 
 // middlewares
-app.use(bodyParser.json());
+app.use(json());
 
 // routes
 app.use('/api/places', placesRoutes);
