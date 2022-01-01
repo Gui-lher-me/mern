@@ -10,7 +10,7 @@ const HttpError = require('./models/http-error');
 
 // vars
 const dotenv = require('dotenv');
-dotenv.config({ path: './config/config.env' });
+dotenv.config({ path: '.env' });
 // **************************************************
 
 // init
@@ -39,7 +39,7 @@ app.use((error, req, res, next) => {
 // **************************************************
 
 // connecting to the db
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 mongoose
     .connect(process.env.MONGODB_ATLAS_CONNECTION_STRING)
     .then((info) => {
